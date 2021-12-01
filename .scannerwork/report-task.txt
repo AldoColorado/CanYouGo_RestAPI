@@ -1,0 +1,6 @@
+projectKey=feimusic_restapi
+serverUrl=http://localhost:9000
+serverVersion=8.9.1.44547
+dashboardUrl=http://localhost:9000/dashboard?id=feimusic_restapi
+ceTaskId=AXpp3mfZEk7D4jBkKjhT
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXpp3mfZEk7D4jBkKjhT
