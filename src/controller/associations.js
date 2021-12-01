@@ -9,7 +9,7 @@ database.Cliente.belongsTo(database.Cuenta, {foreignKey: "username"});
 // Negocio-Sucursal
 database.Negocio.hasMany(database.Sucursal, {as: 'Sucursal', foreignKey: 'idNegocio' });
 database.Sucursal.belongsTo(database.Negocio, {foreignKey: 'idNegocio' });
-// // Album-Artista
+// Dueño-Negocio
 // database.Album.belongsTo(database.Artista, {foreignKey: 'idArtista' });
 // database.Artista.hasMany(database.Album, {foreignKey: 'idArtista' });
 // // Album-Consumidor
