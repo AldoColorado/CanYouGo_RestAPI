@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         RFC: {
             type: Sequelize.STRING(50),
-            allowNull : false
+            allowNull : true
         },
     },{
         freezeTableName: true,     //Model tablename will be the same as the model

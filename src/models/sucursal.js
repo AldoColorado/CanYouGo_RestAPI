@@ -8,23 +8,23 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
             allowNull : false
         },
-        ciudad: {
+        aforoActual: {
             type: Sequelize.STRING(50),
             allowNull : false
         },  
-        colonia: {
+        capacidad: {
             type: Sequelize.STRING(50),
             allowNull : false
-        },  
+        },    
         direccion: {
             type: Sequelize.STRING(50),
             allowNull : false
         }, 
-        diasApertura: {
+        latitud: {
             type: Sequelize.STRING(50),
             allowNull : false
-        },   
-        horario: {
+        }, 
+        longitud: {
             type: Sequelize.STRING(50),
             allowNull : false
         }, 
@@ -32,6 +32,18 @@ module.exports = (sequelize, DataTypes) => {
             type: Sequelize.STRING(50),
             allowNull : false
         }, 
+        medidasSanitarias: {
+            type: Sequelize.STRING(50),
+            allowNull : false
+        },
+        foto: {
+            type: Sequelize.STRING(250),
+            allowNull : false
+        },  
+        fotoPortada: {
+            type: Sequelize.STRING(250),
+            allowNull : false
+        },
     },{
         freezeTableName: true,     //Model tablename will be the same as the model
         timestamps: false
