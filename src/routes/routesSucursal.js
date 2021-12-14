@@ -6,7 +6,7 @@ routerSucursal.get('/Sucursal',controller.getSucursales);
 routerSucursal.get('/Sucursal/:idSucursal', controller.getSucursal);
 routerSucursal.post('/Sucursal',controller.createSucursal);
 routerSucursal.delete('/Sucursal/:idSucursal', controller.deleteSucursal);
-routerSucursal.put('/Sucursal/:username', controller.updateSucursal);
+//routerSucursal.put('/Sucursal/:username', controller.updateSucursal);
 
 
 module.exports = routerSucursal;

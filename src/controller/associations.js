@@ -9,7 +9,21 @@ database.Cliente.belongsTo(database.Cuenta, {foreignKey: "username"});
 // Negocio-Sucursal
 database.Negocio.hasMany(database.Sucursal, {as: 'Sucursal', foreignKey: 'idNegocio' });
 database.Sucursal.belongsTo(database.Negocio, {foreignKey: 'idNegocio' });
-// Dueño-Negocio
+
+// Sucursal-Horario
+database.Sucursal.hasMany(database.Horario,{as: 'Horario', foreignKey: 'idSucursal'});
+database.Horario.belongsTo(database.Sucursal, {foreignKey: 'idSucursal' });
+
+// Cliente-Reservacion
+database.Cliente.hasMany(database.Reservacion,{as: 'Reservacion', foreignKey: 'idCliente'});
+database.Reservacion.belongsTo(database.Cliente, {foreignKey: 'idCliente' });
+
+// Sucursal-Reservacion
+database.Sucursal.hasMany(database.Reservacion,{as: 'Reservacion', foreignKey: 'idSucursal'});
+database.Reservacion.belongsTo(database.Sucursal, {foreignKey: 'idSucursal' });
+
+
+// // Album-Artista
 // database.Album.belongsTo(database.Artista, {foreignKey: 'idArtista' });
 // database.Artista.hasMany(database.Album, {foreignKey: 'idArtista' });
 // // Album-Consumidor

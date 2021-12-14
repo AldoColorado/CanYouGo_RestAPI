@@ -9,14 +9,12 @@ module.exports = {
             {username: req.body.username}
         }).then(cuenta => {
             if(cuenta == null){
-                return res.status(404).json({
-                    error: true,
+                return res.status(400).json({
                     message: 'Usuario o contrasenia incorrecta'
                 })
             }
             if(!cuenta.username || !cuenta.password){
-                return res.status(404).json({
-                    error: true,
+                return res.status(400).json({
                     message: 'Usuario o contrasenia incorrecta'
                 });
             }else{
@@ -28,8 +26,7 @@ module.exports = {
                         tipoUsuario: cuenta.tipoUsuario,
                     })     
                 }else{
-                    return res.status(404).json({
-                        error: true,
+                    return res.status(400).json({
                         message: 'Usuario o contrasenia incorrecta'
                     })
                 }

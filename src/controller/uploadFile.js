@@ -1,14 +1,16 @@
 const Multer = require('multer');
 const path = require('path');
+const config = require('../../config/canyougo-334222-ca971ab44f23.json');
 
 const {Storage} = require('@google-cloud/storage');
 
 const googleCloud = new Storage({
-    keyFilename: path.join( 'C:/Users/Aldo/Desktop/FeiMusic_RestAPI/config/fei-music-f55f6b7f278a.json'),
-    projectId: 'fei-music'
+    keyFilename: path.join('C:/Users/Aldo/Documents/SEPTIMO SEMESTRE/DESARROLLO DE SISTEMAS WEB/CanYouGO_RestAPI/config/canyougo-334222-ca971ab44f23.json'),
+    projectId: 'canyougo'
 });
 
-const feiMusicBucket = googleCloud.bucket('fei_music_archivos');
+
+const doitcleanbucket = googleCloud.bucket('doitcleanbucket');
 
 const multer = Multer({
     storage: Multer.memoryStorage(),
@@ -17,12 +19,12 @@ const multer = Multer({
 module.exports = {
     async uploadArchivo(req, res) {
             const newFileName = req.file.originalname;
-            const blob =  feiMusicBucket.file(newFileName)
+            const blob =  doitcleanbucket.file(newFileName)
             const blobStream = blob.createWriteStream();
         
             blobStream.on("error", err => console.log(err));
             blobStream.on("finish", () => {
-                const publicUrl = `https://storage.googleapis.com/${feiMusicBucket.name}/${blob.name}`
+                const publicUrl = `https://storage.googleapis.com/${doitcleanbucket.name}/${blob.name}`
                 res.status(200).json({
                     archivo: publicUrl
                 });

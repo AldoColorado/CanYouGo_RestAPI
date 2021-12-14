@@ -23,11 +23,16 @@ module.exports = (sequelize, DataTypes) => {
         metodosPago: {
             type: Sequelize.STRING(50),
             allowNull : false
-        },   
-        medidasSanitarias: {
-            type: Sequelize.STRING(50),
-            allowNull : false
         }, 
+        foto: {
+            type: Sequelize.STRING(250),
+            allowNull : false
+        },  
+        fotoPortada: {
+            type: Sequelize.STRING(250),
+            allowNull : false
+        },  
+        
     },{
         freezeTableName: true,     //Model tablename will be the same as the model
         timestamps: false
