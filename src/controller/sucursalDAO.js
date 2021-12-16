@@ -21,9 +21,30 @@ module.exports = {
 
   async getSucursal(req, res) {
     return database.Sucursal.findOne({
+      attributes: [
+        "idSucursal",
+        "aforoActual",
+        "capacidad",
+        "direccion",
+        "latitud",
+        "longitud",
+        "telefono",
+        "medidasSanitarias",
+        "foto",
+        "fotoPortada",
+      ],
       where: {
-        nombreSucursal: req.params.nombreSucursal,
+        idSucursal: req.params.idSucursal,
       },
+      include: {
+        model: database.Negocio, as: "Negocio",
+        atributes: ["idNegocio",
+        "nombre",
+        "descripcion",
+        "foto",
+        "fotoPortada",
+        "metodosPago"]
+      }
     }).then((Sucursal) => {
       if (Sucursal == null) {
         res.sendStatus(404);
