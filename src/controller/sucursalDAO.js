@@ -36,15 +36,7 @@ module.exports = {
       where: {
         idSucursal: req.params.idSucursal,
       },
-      include: {
-        model: database.Negocio, as: "Negocio",
-        atributes: ["idNegocio",
-        "nombre",
-        "descripcion",
-        "foto",
-        "fotoPortada",
-        "metodosPago"]
-      }
+      include: [{all: true}],
     }).then((Sucursal) => {
       if (Sucursal == null) {
         res.sendStatus(404);
