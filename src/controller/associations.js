@@ -22,6 +22,16 @@ database.Reservacion.belongsTo(database.Cliente, {foreignKey: 'idCliente' });
 database.Sucursal.hasMany(database.Reservacion,{as: 'Reservacion', foreignKey: 'idSucursal'});
 database.Reservacion.belongsTo(database.Sucursal, {foreignKey: 'idSucursal' });
 
+// Sucursal-MedidaSanitaria
+
+database.Sucursal.hasMany(database.MedidasSanitarias, {as: 'MedidasSanitarias', foreignKey: 'idSucursal'});
+database.MedidasSanitarias.belongsTo(database.Sucursal, {foreignKey: 'idSucursal' });
+
+// Sucursal-Servicio
+
+database.Sucursal.hasMany(database.Servicio, {as: 'Servicio', foreignKey: 'idSucursal'});
+database.Servicio.belongsTo(database.Sucursal, {foreignKey: 'idSucursal' });
+
 
 // // Album-Artista
 // database.Album.belongsTo(database.Artista, {foreignKey: 'idArtista' });

@@ -1,23 +1,15 @@
 const Sequelize  = require('Sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-    const Horario = sequelize.define("Horario", {
-        idHorario: {
+    const MedidasSanitarias = sequelize.define("MedidasSanitarias", {
+        idMedidasSanitarias: {
             type: Sequelize.BIGINT,
             primaryKey: true,
             autoIncrement: true,
             allowNull : false
         },
-        dia: {
-            type: Sequelize.STRING,
-            allowNull : false
-        },
-        horaApertura: {
-            type: Sequelize.TIME,
-            allowNull : false
-        },
-        horaCierre: {
-            type: Sequelize.TIME,
+        medida: {
+            type: Sequelize.STRING(250),
             allowNull : false
         },
     },{
@@ -25,5 +17,5 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
     });
 
-    return Horario;
+    return MedidasSanitarias;
 }
